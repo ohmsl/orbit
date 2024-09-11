@@ -18,6 +18,17 @@ const baseTheme: ThemeOptions = {
         disableRipple: true,
       },
     },
+
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          "& .MuiCardHeader-action": {
+            marginTop: 0,
+            marginRight: 0,
+          },
+        },
+      },
+    },
   },
 };
 
