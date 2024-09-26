@@ -1,13 +1,19 @@
 import ForumCategories from "@/components/Forum/ForumCategories/ForumCategories";
-import { Container, Typography } from "@mui/material";
+import Hero from "@/components/Forum/Hero";
+import View from "@/components/View";
 
 export default function Home() {
   return (
-    <Container maxWidth="xl">
-      <Typography variant="h3" gutterBottom>
-        Orbit
-      </Typography>
+    <View>
+      <Hero
+        title={
+          <>
+            Welcome to <b>ORBIT.</b>
+          </>
+        }
+        subtitle="Join the conversation and share your thoughts with the community."
+      />
       <ForumCategories />
-    </Container>
+    </View>
   );
 }

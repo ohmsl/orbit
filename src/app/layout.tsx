@@ -1,3 +1,4 @@
+import {} from "@/utils/toTitleCase";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import type {} from "@mui/material/themeCssVarsAugmentation";
 import { GeistMono } from "geist/font/mono";

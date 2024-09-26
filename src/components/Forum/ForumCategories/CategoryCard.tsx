@@ -5,7 +5,7 @@ export const CategoryCard = styled(Card)(({ theme }) => ({
   width: "100%",
   height: "100%",
   backgroundImage: `linear-gradient(to top left, ${darken(
-    theme.palette.primary.dark,
+    theme.palette.primary.light,
     0.7
-  )} 0%, rgba(255 255 255 / 0.021) 50%)`,
+  )} 0%, var(--orbit-palette-background-paper) 50%)`,
 }));
