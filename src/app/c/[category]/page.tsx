@@ -3,6 +3,7 @@ import ForumThreads from "@/components/Forum/ForumThreads/ForumThreads";
 import Hero from "@/components/Forum/Hero";
 import View from "@/components/View";
 import { toTitleCase } from "@/utils/toTitleCase";
+import { Box } from "@mui/material";
 import { useParams } from "next/navigation";
 
 const CategoryDetails = () => {
@@ -16,6 +17,7 @@ const CategoryDetails = () => {
         gradientColor="secondary"
       />
       <ForumThreads />
+      <Box sx={{ marginTop: 2 }} />
     </View>
   );
 };

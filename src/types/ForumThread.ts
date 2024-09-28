@@ -6,6 +6,7 @@ export type ForumThreadType = {
   likes: number;
   comments: number;
   tags: string[];
+  image?: string; // TODO: Working on an image on a thread.
 };
 
 export type StoredForumThreadType = StoredObjectType & {

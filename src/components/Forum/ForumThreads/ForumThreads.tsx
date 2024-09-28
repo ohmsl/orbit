@@ -14,6 +14,7 @@ const threads: Array<ForumThreadType> = [
     likes: 34,
     comments: 12,
     tags: ["food", "comfort", "discussion"],
+    image: "",
   },
   {
     title: "The best movie you've seen this year?",
@@ -98,11 +99,19 @@ const ForumThreads = () => {
         </Stack>
       </Toolbar>
 
-      <Stack spacing={2}>
+      <Box
+        sx={{
+          padding: "14px 20px",
+          bgcolor: "background.paper",
+          borderRadius: "8px",
+        }}
+      >
         {threads.map((thread) => (
-          <ForumThread key={thread.title} thread={thread} />
+          <Box key={thread.title}>
+            <ForumThread thread={thread} />
+          </Box>
         ))}
-      </Stack>
+      </Box>
     </Box>
   );
 };
