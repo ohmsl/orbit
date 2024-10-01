@@ -21,8 +21,8 @@ const ForumThread = ({ thread }: ForumThreadProps) => {
   return (
     <Box
       sx={{
-        padding: "16px",
-        borderBottom: "1px solid",
+        p: 2,
+        borderBottom: 1,
         borderColor: "divider",
       }}
     >
@@ -31,9 +31,11 @@ const ForumThread = ({ thread }: ForumThreadProps) => {
           <Avatar aria-label="author" sx={{ width: 42, height: 42 }}>
             OS
           </Avatar>
-          <Typography variant="body1" sx={{ marginLeft: 1 }}>
+          <Typography variant="body1" sx={{ ml: 1 }}>
             Ollie Slater •{" "}
-            <span style={{ color: "text.primary" }}>{formattedDate}</span>
+            <Typography component="span" color="text.primary">
+              {formattedDate}
+            </Typography>
           </Typography>
         </Stack>
         <IconButton aria-label="more options">
@@ -41,12 +43,9 @@ const ForumThread = ({ thread }: ForumThreadProps) => {
         </IconButton>
       </Stack>
 
-      <Stack spacing={2} sx={{ marginTop: 1 }}>
+      <Stack spacing={2} sx={{ mt: 1 }}>
         <Box>
-          <Typography
-            variant="h6"
-            sx={{ fontWeight: "bold", fontSize: "1.25rem" }}
-          >
+          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
             {thread.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -77,32 +76,22 @@ const ForumThread = ({ thread }: ForumThreadProps) => {
           direction="row"
           alignItems="center"
           justifyContent="space-between"
-          sx={{ marginTop: 2 }}
+          sx={{ mt: 2 }}
         >
           <Stack direction="row" spacing={1}>
-            <IconButton
-              aria-label="like"
-              sx={{
-                borderRadius: "15px",
-              }}
-            >
+            <IconButton aria-label="like" sx={{ borderRadius: 2 }}>
               <FavouriteIcon />
-              <Typography variant="body2" sx={{ marginLeft: 0.5 }}>
+              <Typography variant="body2" sx={{ ml: 0.5 }}>
                 {thread.likes}
               </Typography>
             </IconButton>
-            <IconButton
-              aria-label="comment"
-              sx={{
-                borderRadius: "15px",
-              }}
-            >
+            <IconButton aria-label="comment" sx={{ borderRadius: 2 }}>
               <CommentIcon />
-              <Typography variant="body2" sx={{ marginLeft: 0.5 }}>
+              <Typography variant="body2" sx={{ ml: 0.5 }}>
                 {thread.comments}
               </Typography>
             </IconButton>
-            <IconButton aria-label="share" sx={{}}>
+            <IconButton aria-label="share">
               <ShareIcon />
             </IconButton>
           </Stack>
