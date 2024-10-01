@@ -3,10 +3,12 @@ import TopIcon from "@mui/icons-material/ArrowUpwardRounded";
 import LikeIcon from "@mui/icons-material/FavoriteRounded";
 import NewIcon from "@mui/icons-material/NewReleasesRounded";
 import HotIcon from "@mui/icons-material/WhatshotRounded";
-import { Box, Chip, Stack, Toolbar, Typography } from "@mui/material";
+import { Box, Paper, Stack, Toolbar, Typography } from "@mui/material";
+import { useState } from "react";
+import FilterChip from "./FilterChip";
 import ForumThread from "./ForumThread";
 
-const threads: Array<ForumThreadType> = [
+const data: Array<ForumThreadType> = [
   {
     title: "What's your go-to comfort food?",
     content:
@@ -65,44 +67,49 @@ const threads: Array<ForumThreadType> = [
   },
 ];
 
+type FilterBy = "hot" | "top" | "new" | "likes";
+
 const ForumThreads = () => {
+  const [threads, setThreads] = useState(data);
+  const [filterBy, setFilterBy] = useState<FilterBy>("hot");
+
   return (
     <Box>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Typography variant="h5">Threads</Typography>
         <Stack direction="row" spacing={1}>
-          <Chip
+          <FilterChip
             label="Hot"
-            size="small"
             icon={<HotIcon />}
-            onClick={() => {}}
+            onClick={() => setFilterBy("hot")}
+            selected={filterBy === "hot"}
           />
-          <Chip
+          <FilterChip
             label="Top"
-            size="small"
             icon={<TopIcon />}
-            onClick={() => {}}
+            onClick={() => setFilterBy("top")}
+            selected={filterBy === "top"}
           />
-          <Chip
+          <FilterChip
             label="New"
-            size="small"
             icon={<NewIcon />}
-            onClick={() => {}}
+            onClick={() => setFilterBy("new")}
+            selected={filterBy === "new"}
           />
-          <Chip
+          <FilterChip
             label="Likes"
-            size="small"
             icon={<LikeIcon />}
-            onClick={() => {}}
+            onClick={() => setFilterBy("likes")}
+            selected={filterBy === "likes"}
           />
         </Stack>
       </Toolbar>
 
-      <Stack spacing={2}>
+      <Paper>
         {threads.map((thread) => (
           <ForumThread key={thread.title} thread={thread} />
         ))}
-      </Stack>
+      </Paper>
     </Box>
   );
 };

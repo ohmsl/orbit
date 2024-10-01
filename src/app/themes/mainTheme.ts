@@ -5,9 +5,33 @@ import {
   type ColorSystemOptions,
 } from "@mui/material";
 import { GeistSans } from "geist/font/sans";
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const baseTheme: ThemeOptions = {
   typography: {
+    h1: {
+      fontFamily: manrope.style.fontFamily,
+    },
+    h2: {
+      fontFamily: manrope.style.fontFamily,
+    },
+    h3: {
+      fontFamily: manrope.style.fontFamily,
+    },
+    h4: {
+      fontFamily: manrope.style.fontFamily,
+    },
+    h5: {
+      fontFamily: manrope.style.fontFamily,
+    },
+    h6: {
+      fontFamily: manrope.style.fontFamily,
+    },
     fontFamily: GeistSans.style.fontFamily,
   },
   shape: {
